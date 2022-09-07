@@ -1,0 +1,30 @@
+<div class="navbar">
+  <span>WORK ORDERS</span>
+</div>
+
+<div class="content">
+  <table>
+    <tr class="table-title" *ngIf="viewedData.length > 0">
+      <th>Work Order ID</th>
+      <th>Description</th>
+      <th>Received date</th>
+      <th>Assigned to</th>
+      <th>Status</th>
+      <th>Priority</th>
+    </tr>
+    <tr *ngFor="let data of viewedData">
+      <td>{{ data.work_order_id }}</td>
+      <td>{{ data.description }}</td>
+      <td>{{ data.received_date }}</td>
+      <td>
+        <div *ngFor="let person of data.assigned_to">
+          {{ person.person_name }} - {{ person.status }}
+        </div>
+      </td>
+      <td>{{ data.status }}</td>
+      <td>{{ data.priority }}</td>
+    </tr>
+  </table>
+
+  <footer><b>FS&nbsp;</b> - code</footer>
+</div>
