@@ -6,7 +6,9 @@
   color: var(--dark-color);
 }
 
-.navbar {
+.toolbar {
+  display: flex;
+  justify-content: space-between;
   position: absolute;
   top: 0;
   left: 0;
@@ -18,6 +20,21 @@
   padding: 0 15px;
   background-color: var(--dark-color);
   color: white;
+
+  input {
+    border: 5px solid var(--light-color);
+  }
+
+  .button {
+    height: 28px;
+    border: 5px solid var(--light-color);
+    background-color: var(--light-color);
+    margin-left: 10px;
+    &:hover {
+      border-color: #e2d6b8;
+      background-color: #e2d6b8;
+    }
+  }
 }
 
 .content {

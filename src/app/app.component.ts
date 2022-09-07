@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit } from '@angular/core';
 import { Data } from '@angular/router';
 import { ApiService } from './api.service';
 
@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
   response: Data[] = [];
   viewedData: Data[] = [];
 
-  constructor(private api: ApiService) {}
+  constructor(private api: ApiService, private elementRef: ElementRef) {}
 
   ngOnInit() {
     this.fetchResponse();
@@ -30,5 +30,22 @@ export class AppComponent implements OnInit {
       .catch((err) => {
         throw err;
       });
+  }
+
+  searchDescription(): void {
+    this.viewedData = this.response;
+    const input = this.elementRef.nativeElement.querySelector('#search');
+
+    let searched: Data[] = [];
+    for (let i = 0; i < this.response.length; i++) {
+      if (
+        this.response[i].description
+          .toLowerCase()
+          .includes(input.value.toLowerCase())
+      ) {
+        searched.push(this.viewedData[i]);
+      }
+    }
+    this.viewedData = searched;
   }
 }

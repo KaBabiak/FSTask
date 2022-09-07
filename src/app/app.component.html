@@ -1,10 +1,15 @@
-<div class="navbar">
+<div class="toolbar">
   <span>WORK ORDERS</span>
+
+  <div>
+    <input id="search" type="text" placeholder="Search by description" />
+    <button class="button" (click)="searchDescription()">Search</button>
+  </div>
 </div>
 
 <div class="content">
   <table>
-    <tr class="table-title" *ngIf="viewedData.length > 0">
+    <tr class="table-title" *ngIf="viewedData.length > 0; else noResultTmpl">
       <th>Work Order ID</th>
       <th>Description</th>
       <th>Received date</th>
@@ -26,5 +31,9 @@
     </tr>
   </table>
 
-  <footer><b>FS&nbsp;</b> - code</footer>
+  <footer><b>FS&nbsp;</b> - code by Karolina</footer>
 </div>
+
+<ng-template #noResultTmpl>
+  <p class="content">Ups..! No results match the search criteria</p>
+</ng-template>
