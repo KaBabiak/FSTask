@@ -1,6 +1,6 @@
 ## FSCode project
 
-FSCode is a test project generated with [Angular] (https://github.com/angular/angular-cli) version 12.2.18.
+FSCode is a test project generated with [Angular](https://github.com/angular/angular-cli) version 12.2.18.
 
 ### Description
 
@@ -9,4 +9,9 @@ To search displayed data by description, enter any text in the search field and 
 
 ### Setup
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files
+Git and Node.js v16 required.
+
+Clone or download the project.
+
+To run project locally, go to the project location and install it using `npm install`.
+Use `ng serve` to start dev server. Navigate to `http://localhost:4200/` (or another indicated port).
